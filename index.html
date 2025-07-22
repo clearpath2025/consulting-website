@@ -3,55 +3,68 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Clearpath – Zoho & Workday Experts</title>
   <meta name="description" content="Clearpath is a consulting firm offering expert Zoho Ecosystem Solutions and seamless Workday Integrations." />
-
-  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
 
-  <!-- CSS Styles -->
   <style>
     :root {
-      --primary: #1e40af;
+      --primary: #1e3a8a;
       --secondary: #00b8d9;
-      --text: #1f2937;
       --light: #f8fafc;
       --white: #fff;
+      --text-dark: #1f2937;
       --radius: 14px;
       --shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
     }
 
-    * { box-sizing: border-box; scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
     body {
-      margin: 0; padding: 0;
       font-family: 'Inter', sans-serif;
-      background-color: var(--light);
-      color: var(--text);
+      background: var(--light);
+      color: var(--text-dark);
       line-height: 1.7;
     }
 
+    a {
+      text-decoration: none;
+    }
+
+    /* Header */
     header {
-      background: linear-gradient(90deg, #0a1d60, var(--primary));
+      background: linear-gradient(to right, #0a1d60, var(--primary));
       color: var(--white);
-      padding: 80px 20px 50px;
+      padding: 80px 20px;
       text-align: center;
       position: relative;
     }
 
     nav {
+      position: sticky;
+      top: 0;
+      z-index: 999;
       display: flex;
       justify-content: center;
+      background-color: rgba(30, 58, 138, 0.95);
       gap: 30px;
-      margin-bottom: 20px;
-      flex-wrap: wrap;
+      padding: 10px 0;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(8px);
     }
 
     nav a {
       color: var(--white);
-      text-decoration: none;
       font-weight: 500;
-      transition: color 0.3s ease;
+      font-size: 1em;
+      padding: 8px 12px;
+      transition: color 0.3s;
     }
 
     nav a:hover {
@@ -60,25 +73,36 @@
 
     h1 {
       font-size: 3rem;
-      margin-top: 0;
       margin-bottom: 10px;
     }
 
     h2 {
       font-size: 2rem;
       color: var(--primary);
-      margin-bottom: 14px;
+      margin-bottom: 20px;
     }
 
     h3 {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       color: var(--primary);
     }
 
     section {
       max-width: 1100px;
       margin: auto;
-      padding: 60px 20px;
+      padding: 60px 24px;
+    }
+
+    /* Animated fade effect */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease-out;
+    }
+
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .services {
@@ -89,23 +113,22 @@
     }
 
     .box {
-      background-color: var(--white);
+      background: var(--white);
       padding: 28px;
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      transition: 0.3s ease;
-      flex: 1 1 320px;
+      flex: 1 1 300px;
       max-width: 480px;
+      transition: transform 0.3s ease;
     }
 
     .box:hover {
       transform: translateY(-6px);
-      box-shadow: 0 8px 28px rgba(30, 64, 175, 0.12);
     }
 
     .box ul {
       padding-left: 20px;
-      margin: 0;
+      margin-top: 10px;
     }
 
     .cta {
@@ -114,19 +137,19 @@
       border-radius: var(--radius);
       padding: 50px 20px;
       box-shadow: var(--shadow);
+      margin-top: 40px;
     }
 
     .contact-btn {
       background-color: var(--secondary);
       color: #fff;
-      padding: 14px 36px;
-      font-size: 1.1em;
-      font-weight: 600;
-      border-radius: 50px;
       border: none;
-      transition: all 0.3s ease;
+      padding: 14px 36px;
+      border-radius: 50px;
+      font-size: 1.1em;
       cursor: pointer;
-      display: inline-block;
+      transition: 0.3s ease;
+      font-weight: 600;
       margin-top: 20px;
     }
 
@@ -135,16 +158,16 @@
     }
 
     .faq-item {
-      background: #fff;
+      background: var(--white);
       padding: 20px;
       border-radius: var(--radius);
       margin-bottom: 16px;
       box-shadow: var(--shadow);
-      transition: 0.2s;
+      transition: 0.3s ease;
     }
 
     .faq-item:hover {
-      transform: translateY(-4px);
+      transform: translateY(-5px);
     }
 
     footer {
@@ -161,14 +184,14 @@
     }
 
     ul {
-      margin: 10px 0 0 0;
+      margin-top: 10px;
     }
 
-    /* Mobile Responsive */
     @media screen and (max-width: 768px) {
       nav {
         gap: 15px;
         font-size: 0.9em;
+        flex-wrap: wrap;
       }
       h1 {
         font-size: 2rem;
@@ -176,87 +199,103 @@
     }
   </style>
 </head>
+
 <body>
 
-  <header>
-    <h1>Clearpath</h1>
-    <p>Your Partner for Zoho Ecosystem Solutions &amp; Workday Integrations</p>
-    <nav>
-      <a href="#who">Who We Are</a>
-      <a href="#services">Services</a>
-      <a href="#why">Why Us</a>
-      <a href="#faq">FAQs</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+<header>
+  <h1>Clearpath</h1>
+  <p>Your Partner for Zoho Ecosystem Solutions &amp; Workday Integrations</p>
+</header>
 
-  <section id="who">
-    <h2>Who We Are</h2>
-    <p>At <strong>Clearpath</strong>, we empower organizations to drive digital growth with our expert Zoho ecosystem solutions and seamless Workday integrations. We’re trusted by enterprises to deliver smart, future-ready systems that run smoothly and scale confidently.</p>
-  </section>
+<nav>
+  <a href="#who">Who We Are</a>
+  <a href="#services">Services</a>
+  <a href="#why">Why Us</a>
+  <a href="#faq">FAQs</a>
+  <a href="#contact">Contact</a>
+</nav>
 
-  <section id="services">
-    <h2>Our Services</h2>
-    <div class="services">
-      <div class="box">
-        <h3>Zoho Ecosystem Solutions</h3>
-        <ul>
-          <li>CRM Implementation & Customization</li>
-            <li>Zoho Creator Custom App Development</li>
-          <li>Zoho Books Automation</li>
-          <li>Zoho Projects Setup</li>
-          <li>Zoho Desk (Customer Support)</li>
-          <li>Zoho People (HR)</li>
-          <li>Integrations, Training & Long-term Support</li>
-        </ul>
-      </div>
-      <div class="box">
-        <h3>Workday Integrations</h3>
-        <ul>
-          <li>HRIS Implementations</li>
-          <li>Custom API & Data Sync</li>
-          <li>Payroll/Finance Integrations</li>
-          <li>3rd-party System Connections</li>
-          <li>Lifecycle Support & Optimization</li>
-        </ul>
-      </div>
+<section id="who" class="fade-in">
+  <h2>Who We Are</h2>
+  <p>At <strong>Clearpath</strong>, we empower organizations to drive digital growth with our expert Zoho ecosystem solutions and seamless Workday integrations. We’re trusted by enterprises to deliver smart, future-ready systems that run smoothly and scale confidently.</p>
+</section>
+
+<section id="services" class="fade-in">
+  <h2>Our Services</h2>
+  <div class="services">
+    <div class="box">
+      <h3>Zoho Ecosystem Solutions</h3>
+      <ul>
+        <li>CRM Implementation & Customization</li>
+        <li>Zoho Creator Custom App Development</li>
+        <li>Zoho Books Automation</li>
+        <li>Zoho Projects Setup</li>
+        <li>Zoho Desk (Customer Support)</li>
+        <li>Zoho People (HR)</li>
+        <li>Integrations, Training & Long-term Support</li>
+      </ul>
     </div>
-  </section>
-
-  <section id="why">
-    <h2>Why Choose Clearpath?</h2>
-    <ul>
-      <li><strong>Certified Zoho & Workday Professionals</strong> – Up-to-date implementation experts.</li>
-      <li><strong>End-to-End Project Ownership</strong> – Strategy to support, every step covered.</li>
-      <li><strong>Tailored Digital Solutions</strong> – Built around your workflows and success metrics.</li>
-      <li><strong>On-demand Support</strong> – Personalized client-first approach.</li>
-      <li><strong>Proven Success</strong> – 50+ successful onboarding and transformation stories.</li>
-    </ul>
-  </section>
-
-  <section class="cta" id="contact">
-    <h2>Let's Build Your Future Together</h2>
-    <p>Get in touch to explore how Clearpath can accelerate your business process transformation through seamless integrations and cloud services.</p>
-    <a href="mailto:info@yourfirm.com" class="contact-btn">Contact Us</a>
-  </section>
-
-  <section id="faq">
-    <h2>Frequently Asked Questions</h2>
-    <div class="faq-item">
-      <strong>Q:</strong> Do you support both new implementations and existing setups?<br />
-      <strong>A:</strong> Yes! We specialize in both greenfield deployments and optimization of ongoing platforms.
+    <div class="box">
+      <h3>Workday Integrations</h3>
+      <ul>
+        <li>HRIS Implementations</li>
+        <li>Custom API & Data Sync</li>
+        <li>Payroll/Finance Integrations</li>
+        <li>3rd-party System Connections</li>
+        <li>Lifecycle Support & Optimization</li>
+      </ul>
     </div>
-    <div class="faq-item">
-      <strong>Q:</strong> Can you integrate Workday with legacy or industry-specific apps?<br />
-      <strong>A:</strong> Definitely. Our experts have experience with complex integrations across finance, HR, ITSM, and payroll platforms.
-    </div>
-  </section>
+  </div>
+</section>
 
-  <footer>
-    &copy; 2025 Clearpath &mdash;
-    Email: <a href="mailto:info@yourfirm.com">info@yourfirm.com</a> |
-    Phone: +1-800-XXX-XXXX
-  </footer>
+<section id="why" class="fade-in">
+  <h2>Why Choose Clearpath?</h2>
+  <ul>
+    <li><strong>Certified Zoho & Workday Professionals</strong> – Up-to-date implementation experts.</li>
+    <li><strong>End-to-End Project Ownership</strong> – Strategy to support, every step covered.</li>
+    <li><strong>Tailored Digital Solutions</strong> – Built around your workflows and success metrics.</li>
+    <li><strong>On-demand Support</strong> – Personalized client-first approach.</li>
+    <li><strong>Proven Success</strong> – 50+ successful onboarding and transformation stories.</li>
+  </ul>
+</section>
+
+<section class="cta fade-in" id="contact">
+  <h2>Let's Build Your Future Together</h2>
+  <p>Get in touch to explore how Clearpath can accelerate your business process transformation through seamless integrations and cloud services.</p>
+  <a href="mailto:info@yourfirm.com" class="contact-btn">Contact Us</a>
+</section>
+
+<section id="faq" class="fade-in">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-item">
+    <strong>Q:</strong> Do you support both new implementations and existing setups?<br />
+    <strong>A:</strong> Yes! We specialize in both greenfield deployments and optimization of ongoing platforms.
+  </div>
+  <div class="faq-item">
+    <strong>Q:</strong> Can you integrate Workday with legacy or industry-specific apps?<br />
+    <strong>A:</strong> Definitely. Our experts have experience integrating Workday with payroll, finance, ITSM, and third-party platforms.
+  </div>
+</section>
+
+<footer>
+  &copy; 2025 Clearpath &mdash;
+  Email: <a href="mailto:info@yourfirm.com">info@yourfirm.com</a> |
+  Phone: +1-800-XXX-XXXX
+</footer>
+
+<!-- Animation Activation Script -->
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll(".fade-in").forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>
