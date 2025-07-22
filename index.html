@@ -1,238 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Clearpath – Zoho & Workday Experts</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Google Fonts for modern typeface -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <title>Clearpath – Zoho & Workday Experts</title>
+  <meta name="description" content="Clearpath is a consulting firm offering expert Zoho Ecosystem Solutions and seamless Workday Integrations." />
 
-    <style>
-        :root {
-            --primary: #0739a8;
-            --primary-dark: #02194a;
-            --accent: #00b8d9;
-            --bg: #f7f8fa;
-            --card-bg: #fff;
-            --shadow: 0 4px 24px rgba(7,57,168,0.08);
-            --radius: 14px;
-        }
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
 
-        body {
-            font-family: 'Inter', Arial, sans-serif;
-            margin: 0; padding: 0;
-            background: var(--bg);
-            color: #222;
-        }
-        header {
-            background: linear-gradient(90deg, var(--primary-dark) 0%, var(--primary) 100%);
-            color: #fff;
-            text-align: center;
-            padding: 60px 20px 40px 20px;
-            box-shadow: var(--shadow);
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            background: #fff2;
-            gap: 40px;
-            margin-bottom: 10px;
-        }
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: 600;
-            padding: 10px 0;
-            transition: color 0.2s;
-        }
-        nav a:hover {
-            color: var(--accent);
-        }
-        h1 {
-            font-size: 2.7rem;
-            margin: 0 0 10px 0;
-        }
-        h2 {
-            font-size: 2rem; margin-bottom: 16px; color: var(--primary);
-        }
-        h3 {
-            font-size: 1.2rem; color: var(--primary-dark);
-        }
-        section {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 50px 20px 25px 20px;
-        }
+  <!-- CSS Styles -->
+  <style>
+    :root {
+      --primary: #1e40af;
+      --secondary: #00b8d9;
+      --text: #1f2937;
+      --light: #f8fafc;
+      --white: #fff;
+      --radius: 14px;
+      --shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    }
 
-        .services {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 32px;
-            justify-content: center;
-        }
-        .service-block {
-            background: var(--card-bg);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            padding: 32px 28px;
-            min-width: 300px;
-            flex: 1 1 280px;
-            max-width: 420px;
-            transition: transform 0.15s, box-shadow 0.15s;
-        }
-        .service-block:hover {
-            transform: translateY(-6px) scale(1.02);
-            box-shadow: 0 8px 24px rgba(0,70,150,0.13);
-        }
-        .service-block ul {
-            padding-left: 18px;
-            margin: 18px 0 0 0;
-        }
-        .service-block li {
-            margin-bottom: 13px;
-        }
-        .cta {
-            background: linear-gradient(90deg, #fff, #e1f5fe);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            text-align: center;
-            margin: 60px 0;
-            padding: 42px 18px 36px 18px;
-        }
-        .contact-btn {
-            background: var(--accent);
-            color: #fff;
-            padding: 16px 38px;
-            border: none;
-            outline: none;
-            border-radius: 50px;
-            font-size: 1.25em;
-            margin-top: 18px;
-            letter-spacing: .05em;
-            font-weight: 600;
-            box-shadow: 0 2px 10px rgba(0,184,217, .11);
-            cursor: pointer;
-            transition: background .22s, transform 0.18s;
-        }
-        .contact-btn:hover {
-            background: var(--primary);
-            transform: translateY(-3px) scale(1.03);
-        }
+    * { box-sizing: border-box; scroll-behavior: smooth; }
+    body {
+      margin: 0; padding: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--light);
+      color: var(--text);
+      line-height: 1.7;
+    }
 
-        .faq {
-            margin-top: 25px;
-        }
-        .faq-item {
-            background: var(--card-bg);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            margin-bottom: 16px;
-            padding: 20px 25px;
-            transition: box-shadow .16s;
-        }
-        .faq-item:hover { box-shadow: 0 8px 24px rgba(0,70,150,0.10);}
-        .faq-item strong { color: var(--primary); font-weight: 600;}
-        footer {
-            background: var(--primary-dark);
-            color: #cfd8dc;
-            text-align: center;
-            font-size: 1.08em;
-            padding: 25px 15px 20px 15px;
-            letter-spacing: .01em;
-            margin-top: 60px;
-            border-radius: 10px 10px 0 0;
-        }
-        /* Responsive Layout */
-        @media (max-width: 800px) {
-            .services {flex-direction: column;}
-            .service-block {max-width: 98%;}
-        }
-    </style>
+    header {
+      background: linear-gradient(90deg, #0a1d60, var(--primary));
+      color: var(--white);
+      padding: 80px 20px 50px;
+      text-align: center;
+      position: relative;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--secondary);
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 14px;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      color: var(--primary);
+    }
+
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 60px 20px;
+    }
+
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      justify-content: center;
+    }
+
+    .box {
+      background-color: var(--white);
+      padding: 28px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      transition: 0.3s ease;
+      flex: 1 1 320px;
+      max-width: 480px;
+    }
+
+    .box:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 28px rgba(30, 64, 175, 0.12);
+    }
+
+    .box ul {
+      padding-left: 20px;
+      margin: 0;
+    }
+
+    .cta {
+      background: linear-gradient(90deg, #e0f7fa, #f7fbff);
+      text-align: center;
+      border-radius: var(--radius);
+      padding: 50px 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-btn {
+      background-color: var(--secondary);
+      color: #fff;
+      padding: 14px 36px;
+      font-size: 1.1em;
+      font-weight: 600;
+      border-radius: 50px;
+      border: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      display: inline-block;
+      margin-top: 20px;
+    }
+
+    .contact-btn:hover {
+      background-color: var(--primary);
+    }
+
+    .faq-item {
+      background: #fff;
+      padding: 20px;
+      border-radius: var(--radius);
+      margin-bottom: 16px;
+      box-shadow: var(--shadow);
+      transition: 0.2s;
+    }
+
+    .faq-item:hover {
+      transform: translateY(-4px);
+    }
+
+    footer {
+      background: var(--primary);
+      color: #ccc;
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 0.95em;
+    }
+
+    footer a {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    ul {
+      margin: 10px 0 0 0;
+    }
+
+    /* Mobile Responsive */
+    @media screen and (max-width: 768px) {
+      nav {
+        gap: 15px;
+        font-size: 0.9em;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
-
-<header>
+  <header>
     <h1>Clearpath</h1>
+    <p>Your Partner for Zoho Ecosystem Solutions &amp; Workday Integrations</p>
     <nav>
       <a href="#who">Who We Are</a>
       <a href="#services">Services</a>
       <a href="#why">Why Us</a>
-      <a href="#faq">FAQ</a>
+      <a href="#faq">FAQs</a>
       <a href="#contact">Contact</a>
     </nav>
-    <p>Your Partner for Zoho Ecosystem Solutions & Workday Integrations</p>
-</header>
+  </header>
 
-<section id="who">
+  <section id="who">
     <h2>Who We Are</h2>
-    <p>At <b>Clearpath</b>, we empower organizations to achieve digital transformation with expert Zoho ecosystem solutions and seamless Workday integrations. Our mission is to simplify processes, unlock data, and help you focus on what matters most—growing your business.</p>
-</section>
+    <p>At <strong>Clearpath</strong>, we empower organizations to drive digital growth with our expert Zoho ecosystem solutions and seamless Workday integrations. We’re trusted by enterprises to deliver smart, future-ready systems that run smoothly and scale confidently.</p>
+  </section>
 
-<section id="services">
+  <section id="services">
     <h2>Our Services</h2>
     <div class="services">
-        <div class="service-block">
-            <h3>Zoho Ecosystem Solutions</h3>
-            <ul>
-                <li>CRM Implementation &amp; Customization</li>
-                <li>Books (Finance) Automation</li>
-                <li>Projects Setup</li>
-                <li>Desk (Helpdesk) Solutions</li>
-                <li>People (HR) Solutions</li>
-                <li>Integration, Training &amp; Support</li>
-            </ul>
-        </div>
-        <div class="service-block">
-            <h3>Workday Integrations</h3>
-            <ul>
-                <li>HRIS Implementations</li>
-                <li>Custom API &amp; Data Integrations</li>
-                <li>Payroll &amp; Finance System Connectors</li>
-                <li>3rd-party Application Integrations</li>
-                <li>Ongoing Support &amp; Optimization</li>
-            </ul>
-        </div>
+      <div class="box">
+        <h3>Zoho Ecosystem Solutions</h3>
+        <ul>
+          <li>CRM Implementation & Customization</li>
+            <li>Zoho Creator Custom App Development</li>
+          <li>Zoho Books Automation</li>
+          <li>Zoho Projects Setup</li>
+          <li>Zoho Desk (Customer Support)</li>
+          <li>Zoho People (HR)</li>
+          <li>Integrations, Training & Long-term Support</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>Workday Integrations</h3>
+        <ul>
+          <li>HRIS Implementations</li>
+          <li>Custom API & Data Sync</li>
+          <li>Payroll/Finance Integrations</li>
+          <li>3rd-party System Connections</li>
+          <li>Lifecycle Support & Optimization</li>
+        </ul>
+      </div>
     </div>
-</section>
+  </section>
 
-<section id="why">
-    <h2>Why Choose Us?</h2>
+  <section id="why">
+    <h2>Why Choose Clearpath?</h2>
     <ul>
-        <li><b>Certified Zoho &amp; Workday Experts</b> – Proven knowledge and skills, always up-to-date.</li>
-        <li><b>End-to-End Project Management</b> – From discovery to long-term support.</li>
-        <li><b>100% Tailored Solutions</b> – Every client is unique; so are our solutions.</li>
-        <li><b>Dedicated Support Team</b> – Quick responses, access to real people.</li>
-        <li><b>Track Record</b> – 50+ successful implementations across industries.</li>
+      <li><strong>Certified Zoho & Workday Professionals</strong> – Up-to-date implementation experts.</li>
+      <li><strong>End-to-End Project Ownership</strong> – Strategy to support, every step covered.</li>
+      <li><strong>Tailored Digital Solutions</strong> – Built around your workflows and success metrics.</li>
+      <li><strong>On-demand Support</strong> – Personalized client-first approach.</li>
+      <li><strong>Proven Success</strong> – 50+ successful onboarding and transformation stories.</li>
     </ul>
-</section>
+  </section>
 
-<section class="cta" id="contact">
-    <h2>Let’s Build Your Future</h2>
-    <p>Ready to maximize your technology investment? <br>
-    <b>Contact us today to schedule a free consultation.</b></p>
-    <a href="mailto:info@yourfirm.com" class="contact-btn">Email Us</a>
-</section>
+  <section class="cta" id="contact">
+    <h2>Let's Build Your Future Together</h2>
+    <p>Get in touch to explore how Clearpath can accelerate your business process transformation through seamless integrations and cloud services.</p>
+    <a href="mailto:info@yourfirm.com" class="contact-btn">Contact Us</a>
+  </section>
 
-<section class="faq" id="faq">
+  <section id="faq">
     <h2>Frequently Asked Questions</h2>
     <div class="faq-item">
-        <strong>Q:</strong> Do you offer both new implementations and support for existing Zoho/Workday setups?<br>
-        <strong>A:</strong> Yes, we work with both new deployments and optimizing current systems.
+      <strong>Q:</strong> Do you support both new implementations and existing setups?<br />
+      <strong>A:</strong> Yes! We specialize in both greenfield deployments and optimization of ongoing platforms.
     </div>
     <div class="faq-item">
-        <strong>Q:</strong> Can you help integrate Workday with custom business applications?<br>
-        <strong>A:</strong> Absolutely! Our specialists have extensive experience with custom and third-party integrations.
+      <strong>Q:</strong> Can you integrate Workday with legacy or industry-specific apps?<br />
+      <strong>A:</strong> Definitely. Our experts have experience with complex integrations across finance, HR, ITSM, and payroll platforms.
     </div>
-</section>
+  </section>
 
-<footer>
-    <p>
-        &copy; 2025 Clearpath &mdash;
-        Email: <a href="mailto:info@yourfirm.com" style="color:#fff;text-decoration:underline;">info@yourfirm.com</a> |
-        +1-800-XXX-XXXX
-    </p>
-</footer>
+  <footer>
+    &copy; 2025 Clearpath &mdash;
+    Email: <a href="mailto:info@yourfirm.com">info@yourfirm.com</a> |
+    Phone: +1-800-XXX-XXXX
+  </footer>
+
 </body>
 </html>
