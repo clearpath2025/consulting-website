@@ -2,78 +2,220 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>[Your Consulting Firm Name] – Zoho & Workday Experts</title>
+    <title>Clearpath – Zoho & Workday Experts</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Fonts for modern typeface -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-        header, footer { background: #1a237e; color: #fff; padding: 30px 20px; text-align: center; }
-        section { padding: 40px 20px; }
-        h1, h2, h3 { color: #1a237e; }
-        .services { display: flex; flex-wrap: wrap; gap: 30px; margin-top: 20px; }
-        .service-block { flex: 1 1 300px; background: #f5f5f5; border-radius: 8px; padding: 20px; min-width: 280px; }
-        .cta { background: #f5f5f5; padding: 20px; margin: 40px 0; text-align: center; }
-        .contact-btn { background: #1a237e; color: #fff; padding: 15px 30px; border: none; border-radius: 4px; font-size: 1.1em; cursor: pointer; }
-        .faq { margin-top: 25px; }
-        .faq-item { margin-bottom: 20px; }
+        :root {
+            --primary: #0739a8;
+            --primary-dark: #02194a;
+            --accent: #00b8d9;
+            --bg: #f7f8fa;
+            --card-bg: #fff;
+            --shadow: 0 4px 24px rgba(7,57,168,0.08);
+            --radius: 14px;
+        }
+
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            margin: 0; padding: 0;
+            background: var(--bg);
+            color: #222;
+        }
+        header {
+            background: linear-gradient(90deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: #fff;
+            text-align: center;
+            padding: 60px 20px 40px 20px;
+            box-shadow: var(--shadow);
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #fff2;
+            gap: 40px;
+            margin-bottom: 10px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 10px 0;
+            transition: color 0.2s;
+        }
+        nav a:hover {
+            color: var(--accent);
+        }
+        h1 {
+            font-size: 2.7rem;
+            margin: 0 0 10px 0;
+        }
+        h2 {
+            font-size: 2rem; margin-bottom: 16px; color: var(--primary);
+        }
+        h3 {
+            font-size: 1.2rem; color: var(--primary-dark);
+        }
+        section {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 50px 20px 25px 20px;
+        }
+
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 32px;
+            justify-content: center;
+        }
+        .service-block {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 32px 28px;
+            min-width: 300px;
+            flex: 1 1 280px;
+            max-width: 420px;
+            transition: transform 0.15s, box-shadow 0.15s;
+        }
+        .service-block:hover {
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 0 8px 24px rgba(0,70,150,0.13);
+        }
+        .service-block ul {
+            padding-left: 18px;
+            margin: 18px 0 0 0;
+        }
+        .service-block li {
+            margin-bottom: 13px;
+        }
+        .cta {
+            background: linear-gradient(90deg, #fff, #e1f5fe);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            margin: 60px 0;
+            padding: 42px 18px 36px 18px;
+        }
+        .contact-btn {
+            background: var(--accent);
+            color: #fff;
+            padding: 16px 38px;
+            border: none;
+            outline: none;
+            border-radius: 50px;
+            font-size: 1.25em;
+            margin-top: 18px;
+            letter-spacing: .05em;
+            font-weight: 600;
+            box-shadow: 0 2px 10px rgba(0,184,217, .11);
+            cursor: pointer;
+            transition: background .22s, transform 0.18s;
+        }
+        .contact-btn:hover {
+            background: var(--primary);
+            transform: translateY(-3px) scale(1.03);
+        }
+
+        .faq {
+            margin-top: 25px;
+        }
+        .faq-item {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 16px;
+            padding: 20px 25px;
+            transition: box-shadow .16s;
+        }
+        .faq-item:hover { box-shadow: 0 8px 24px rgba(0,70,150,0.10);}
+        .faq-item strong { color: var(--primary); font-weight: 600;}
+        footer {
+            background: var(--primary-dark);
+            color: #cfd8dc;
+            text-align: center;
+            font-size: 1.08em;
+            padding: 25px 15px 20px 15px;
+            letter-spacing: .01em;
+            margin-top: 60px;
+            border-radius: 10px 10px 0 0;
+        }
+        /* Responsive Layout */
+        @media (max-width: 800px) {
+            .services {flex-direction: column;}
+            .service-block {max-width: 98%;}
+        }
     </style>
 </head>
 <body>
 
+
 <header>
     <h1>Clearpath</h1>
+    <nav>
+      <a href="#who">Who We Are</a>
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
     <p>Your Partner for Zoho Ecosystem Solutions & Workday Integrations</p>
 </header>
 
-<section>
+<section id="who">
     <h2>Who We Are</h2>
-    <p>At [Your Firm], we empower organizations to achieve digital transformation through expert services in the Zoho ecosystem and seamless Workday integrations.</p>
+    <p>At <b>Clearpath</b>, we empower organizations to achieve digital transformation with expert Zoho ecosystem solutions and seamless Workday integrations. Our mission is to simplify processes, unlock data, and help you focus on what matters most—growing your business.</p>
 </section>
 
-<section>
+<section id="services">
     <h2>Our Services</h2>
     <div class="services">
         <div class="service-block">
             <h3>Zoho Ecosystem Solutions</h3>
             <ul>
-                <li>CRM Implementation & Customization</li>
-                <li>Books & Financial Automation</li>
+                <li>CRM Implementation &amp; Customization</li>
+                <li>Books (Finance) Automation</li>
                 <li>Projects Setup</li>
-                <li>Desk Helpdesk Solutions</li>
-                <li>People HR Management Solutions</li>
-                <li>Integration, Training & Support</li>
+                <li>Desk (Helpdesk) Solutions</li>
+                <li>People (HR) Solutions</li>
+                <li>Integration, Training &amp; Support</li>
             </ul>
         </div>
         <div class="service-block">
             <h3>Workday Integrations</h3>
             <ul>
                 <li>HRIS Implementations</li>
-                <li>Custom API & Data Integrations</li>
-                <li>Payroll & Finance System Integrations</li>
-                <li>Third-party Application Connections</li>
-                <li>Ongoing Support & Optimization</li>
+                <li>Custom API &amp; Data Integrations</li>
+                <li>Payroll &amp; Finance System Connectors</li>
+                <li>3rd-party Application Integrations</li>
+                <li>Ongoing Support &amp; Optimization</li>
             </ul>
         </div>
     </div>
 </section>
 
-<section>
+<section id="why">
     <h2>Why Choose Us?</h2>
     <ul>
-        <li>Certified Zoho & Workday Experts</li>
-        <li>End-to-End Project Management</li>
-        <li>100% Tailored Solutions</li>
-        <li>Dedicated Support Team</li>
-        <li>Proven Track Record</li>
+        <li><b>Certified Zoho &amp; Workday Experts</b> – Proven knowledge and skills, always up-to-date.</li>
+        <li><b>End-to-End Project Management</b> – From discovery to long-term support.</li>
+        <li><b>100% Tailored Solutions</b> – Every client is unique; so are our solutions.</li>
+        <li><b>Dedicated Support Team</b> – Quick responses, access to real people.</li>
+        <li><b>Track Record</b> – 50+ successful implementations across industries.</li>
     </ul>
 </section>
 
-<section class="cta">
+<section class="cta" id="contact">
     <h2>Let’s Build Your Future</h2>
-    <p>Ready to maximize your technology investment? Contact us today to schedule a free consultation.</p>
-    <button class="contact-btn">Contact Us</button>
+    <p>Ready to maximize your technology investment? <br>
+    <b>Contact us today to schedule a free consultation.</b></p>
+    <a href="mailto:info@yourfirm.com" class="contact-btn">Email Us</a>
 </section>
 
-<section class="faq">
+<section class="faq" id="faq">
     <h2>Frequently Asked Questions</h2>
     <div class="faq-item">
         <strong>Q:</strong> Do you offer both new implementations and support for existing Zoho/Workday setups?<br>
@@ -81,13 +223,16 @@
     </div>
     <div class="faq-item">
         <strong>Q:</strong> Can you help integrate Workday with custom business applications?<br>
-        <strong>A:</strong> Absolutely. Our specialists have extensive experience with custom and third-party integrations.
+        <strong>A:</strong> Absolutely! Our specialists have extensive experience with custom and third-party integrations.
     </div>
 </section>
 
 <footer>
-    <p>&copy; 2025 Clearpath | Email: info@[yourfirm].com | +1-800-XXX-XXXX</p>
+    <p>
+        &copy; 2025 Clearpath &mdash;
+        Email: <a href="mailto:info@yourfirm.com" style="color:#fff;text-decoration:underline;">info@yourfirm.com</a> |
+        +1-800-XXX-XXXX
+    </p>
 </footer>
-
 </body>
 </html>
