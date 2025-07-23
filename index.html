@@ -3,29 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Clearpath – Zoho & Workday Experts</title>
-  <meta name="description" content="Clearpath is a consulting firm offering expert Zoho Ecosystem Solutions and seamless Workday Integrations." />
+  <title>Clearpath – Zoho & Workday Integration Specialists</title>
+  <meta name="description" content="Clearpath delivers expert Zoho ecosystem solutions and seamless Workday integrations to transform your business operations." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
   <style>
     :root {
       --primary: #1e3a8a;
       --primary-light: #3b82f6;
+      --primary-dark: #0a1d60;
       --secondary: #00b8d9;
       --secondary-light: #00e5ff;
       --accent: #f59e0b;
+      --accent-light: #fcd34d;
       --light: #f8fafc;
       --light-gray: #e2e8f0;
       --white: #fff;
       --text-dark: #1f2937;
       --text-medium: #4b5563;
-      --radius: 14px;
+      --radius: 12px;
       --radius-lg: 24px;
+      --radius-xl: 36px;
       --shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
       --shadow-hover: 0 12px 32px rgba(0, 0, 0, 0.12);
       --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      --gradient-primary: linear-gradient(135deg, var(--primary-dark), var(--primary));
+      --gradient-accent: linear-gradient(135deg, var(--accent), var(--accent-light));
+      --gradient-secondary: linear-gradient(135deg, var(--secondary), var(--secondary-light));
     }
 
     * {
@@ -43,398 +50,344 @@
       overflow-x: hidden;
     }
 
+    h1, h2, h3, h4 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
     a {
       text-decoration: none;
       color: inherit;
+      transition: var(--transition);
     }
 
-    /* Header */
+    /* Modern Glass Morphism Effect */
+    .glass {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Header - Hero Section */
     header {
-      background: linear-gradient(135deg, #0a1d60, var(--primary));
+      background: var(--gradient-primary);
       color: var(--white);
-      padding: 120px 20px 100px;
+      padding: 140px 20px 120px;
       text-align: center;
       position: relative;
       overflow: hidden;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    header::before {
-      content: '';
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px;
+      border-radius: var(--radius-xl);
+    }
+
+    .hero-particles {
       position: absolute;
       top: 0;
       left: 0;
-      right: 0;
-      bottom: 0;
-      background: 
-        radial-gradient(circle at 20% 30%, rgba(0, 184, 217, 0.15) 0%, transparent 40%),
-        radial-gradient(circle at 80% 70%, rgba(245, 158, 11, 0.15) 0%, transparent 40%);
-      z-index: 0;
-    }
-
-    header .content {
-      position: relative;
+      width: 100%;
+      height: 100%;
       z-index: 1;
-      max-width: 800px;
-      margin: 0 auto;
     }
 
-    /* Animated background elements */
-    .bg-circle {
+    .hero-shape {
       position: absolute;
       border-radius: 50%;
-      opacity: 0.1;
-      filter: blur(40px);
+      filter: blur(60px);
+      opacity: 0.15;
       z-index: 0;
     }
 
-    .circle-1 {
-      width: 300px;
-      height: 300px;
+    .shape-1 {
+      width: 400px;
+      height: 400px;
       background: var(--secondary-light);
       top: -100px;
       left: -100px;
       animation: float 12s ease-in-out infinite;
     }
 
-    .circle-2 {
-      width: 400px;
-      height: 400px;
+    .shape-2 {
+      width: 600px;
+      height: 600px;
       background: var(--accent);
-      bottom: -150px;
-      right: -100px;
+      bottom: -200px;
+      right: -150px;
       animation: float 15s ease-in-out infinite reverse;
+    }
+
+    .shape-3 {
+      width: 300px;
+      height: 300px;
+      background: var(--primary-light);
+      top: 50%;
+      left: 20%;
+      animation: float 18s ease-in-out infinite 2s;
     }
 
     @keyframes float {
       0%, 100% {
-        transform: translate(0, 0);
+        transform: translate(0, 0) rotate(0deg);
       }
       50% {
-        transform: translate(20px, 30px);
+        transform: translate(30px, 40px) rotate(5deg);
       }
     }
 
-    /* Navigation */
+    /* Animated Typography */
+    h1 {
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      margin-bottom: 24px;
+      background: linear-gradient(to right, var(--white), var(--light-gray));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    }
+
+    .hero-subtitle {
+      font-size: 1.25rem;
+      max-width: 700px;
+      margin: 0 auto 40px;
+      opacity: 0.9;
+    }
+
+    /* Navigation - Sticky Glass Header */
     nav {
-      position: sticky;
+      position: fixed;
       top: 0;
-      z-index: 999;
+      left: 0;
+      right: 0;
+      z-index: 1000;
       display: flex;
       justify-content: center;
-      background-color: rgba(30, 58, 138, 0.95);
-      gap: 30px;
-      padding: 16px 0;
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
+      background: rgba(30, 58, 138, 0.85);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: 18px 0;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
       transition: var(--transition);
     }
 
     nav.scrolled {
       padding: 12px 0;
-      background-color: rgba(30, 58, 138, 0.98);
+      background: rgba(30, 58, 138, 0.95);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
     }
 
-    nav a {
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      max-width: 1200px;
+      padding: 0 24px;
+    }
+
+    .nav-logo {
+      font-weight: 700;
+      font-size: 1.25rem;
       color: var(--white);
-      font-weight: 500;
-      font-size: 1em;
-      padding: 8px 16px;
-      transition: var(--transition);
-      position: relative;
-      border-radius: 50px;
+      display: flex;
+      align-items: center;
     }
 
-    nav a:hover {
+    .nav-logo i {
+      margin-right: 10px;
       color: var(--secondary-light);
     }
 
-    nav a::after {
+    .nav-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .nav-links a {
+      color: var(--white);
+      font-weight: 500;
+      font-size: 0.95rem;
+      padding: 8px 16px;
+      position: relative;
+      border-radius: 50px;
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover {
+      color: var(--secondary-light);
+    }
+
+    .nav-links a::after {
       content: '';
       position: absolute;
       bottom: 0;
       left: 50%;
       transform: translateX(-50%) scaleX(0);
-      width: 40%;
+      width: 60%;
       height: 2px;
       background: var(--secondary-light);
       transition: var(--transition);
     }
 
-    nav a:hover::after {
+    .nav-links a:hover::after {
       transform: translateX(-50%) scaleX(1);
     }
 
-    /* Typography */
-    h1 {
-      font-size: 3.5rem;
-      margin-bottom: 16px;
-      line-height: 1.2;
-      font-weight: 700;
-      background: linear-gradient(to right, var(--white), var(--light-gray));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-
-    h2 {
-      font-size: 2.5rem;
-      color: var(--primary);
-      margin-bottom: 24px;
-      line-height: 1.3;
-      position: relative;
-      display: inline-block;
-    }
-
-    h2::after {
-      content: '';
-      position: absolute;
-      bottom: -8px;
-      left: 0;
-      width: 60px;
-      height: 4px;
-      background: linear-gradient(to right, var(--secondary), var(--accent));
-      border-radius: 2px;
-    }
-
-    h3 {
-      font-size: 1.5rem;
-      color: var(--primary);
-      margin-bottom: 16px;
+    .nav-cta {
+      background: var(--gradient-secondary);
+      color: var(--white);
+      padding: 10px 24px;
+      border-radius: 50px;
       font-weight: 600;
+      box-shadow: 0 4px 15px rgba(0, 184, 217, 0.3);
     }
 
-    p {
-      color: white;
-      margin-bottom: 16px;
-      font-size: 1.1rem;
+    .nav-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0, 184, 217, 0.4);
     }
 
-    strong {
-      font-weight: 600;
-      color: var(--text-dark);
+    /* Hamburger Menu for Mobile */
+    .hamburger {
+      display: none;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .bar {
+      display: block;
+      width: 25px;
+      height: 3px;
+      margin: 5px auto;
+      background-color: var(--white);
+      transition: all 0.3s ease;
     }
 
     /* Sections */
     section {
       max-width: 1200px;
-      margin: auto;
-      padding: 80px 24px;
+      margin: 0 auto;
+      padding: 100px 24px;
       position: relative;
     }
 
-    section:nth-child(even) {
-      background-color: rgba(248, 250, 252, 0.7);
-    }
-
-    /* Animated effects */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: var(--transition);
-    }
-
-    .fade-in.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .scale-in {
-      opacity: 0;
-      transform: scale(0.95);
-      transition: var(--transition);
-    }
-
-    .scale-in.show {
-      opacity: 1;
-      transform: scale(1);
-    }
-
-    /* Services */
-    .services {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 32px;
-      justify-content: center;
-      margin-top: 40px;
-    }
-
-    .box {
-      background: var(--white);
-      padding: 32px;
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow);
-      flex: 1 1 340px;
-      max-width: 480px;
-      transition: var(--transition);
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--primary);
+      margin-bottom: 40px;
       position: relative;
+      display: inline-block;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 0;
+      width: 80px;
+      height: 5px;
+      background: var(--gradient-secondary);
+      border-radius: 3px;
+    }
+
+    .section-subtitle {
+      font-size: 1.15rem;
+      color: var(--text-medium);
+      max-width: 700px;
+      margin-bottom: 40px;
+    }
+
+    /* About Section */
+    .about-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-image {
+      position: relative;
+      border-radius: var(--radius-xl);
       overflow: hidden;
-      z-index: 1;
+      box-shadow: var(--shadow);
+      height: 500px;
     }
 
-    .box::before {
+    .about-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .about-image::before {
       content: '';
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(135deg, rgba(30, 58, 138, 0.03), rgba(0, 184, 217, 0.03));
-      z-index: -1;
+      background: var(--gradient-primary);
+      opacity: 0.2;
+      z-index: 1;
     }
 
-    .box:hover {
+    .about-content {
+      position: relative;
+    }
+
+    /* Stats Grid */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      margin-top: 60px;
+    }
+
+    .stat-card {
+      background: var(--white);
+      padding: 30px;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      text-align: center;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .stat-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: var(--gradient-secondary);
+      z-index: 2;
+    }
+
+    .stat-card:hover {
       transform: translateY(-10px);
       box-shadow: var(--shadow-hover);
     }
 
-    .box h3 i {
-      margin-right: 12px;
-      color: var(--secondary);
-    }
-
-    .box ul {
-      padding-left: 20px;
-      margin-top: 16px;
-    }
-
-    .box li {
-      margin-bottom: 10px;
-      position: relative;
-      padding-left: 24px;
-      color: var(--text-medium);
-    }
-
-    .box li::before {
-      content: '✓';
-      position: absolute;
-      left: 0;
-      color: var(--secondary);
-      font-weight: bold;
-    }
-
-    /* CTA Section */
-    .cta {
-      background: linear-gradient(135deg, rgba(224, 247, 250, 0.8), rgba(247, 251, 255, 0.9));
-      text-align: center;
-      border-radius: var(--radius-lg);
-      padding: 60px 40px;
-      box-shadow: var(--shadow);
-      margin-top: 40px;
-      position: relative;
-      overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.3);
-    }
-
-    .cta::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: 
-        radial-gradient(circle at 30% 30%, rgba(0, 184, 217, 0.1) 0%, transparent 40%),
-        radial-gradient(circle at 70% 70%, rgba(245, 158, 11, 0.1) 0%, transparent 40%);
-      z-index: 0;
-      animation: rotate 20s linear infinite;
-    }
-
-    @keyframes rotate {
-      0% {
-        transform: rotate(0deg);
-      }
-      100% {
-        transform: rotate(360deg);
-      }
-    }
-
-    .cta .content {
-      position: relative;
-      z-index: 1;
-    }
-
-    /* Buttons */
-    .contact-btn {
-      background: linear-gradient(135deg, var(--secondary), var(--secondary-light));
-      color: #fff;
-      border: none;
-      padding: 16px 40px;
-      border-radius: 50px;
-      font-size: 1.1em;
-      cursor: pointer;
-      transition: var(--transition);
-      font-weight: 600;
-      margin-top: 24px;
-      box-shadow: 0 4px 15px rgba(0, 184, 217, 0.3);
-      position: relative;
-      overflow: hidden;
-      display: inline-block;
-    }
-
-    .contact-btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba(0, 184, 217, 0.4);
-    }
-
-    .contact-btn::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-      transition: 0.6s;
-    }
-
-    .contact-btn:hover::before {
-      left: 100%;
-    }
-
-    /* FAQ */
-    .faq-item {
-      background: var(--white);
-      padding: 24px;
-      border-radius: var(--radius);
-      margin-bottom: 20px;
-      box-shadow: var(--shadow);
-      transition: var(--transition);
-      cursor: pointer;
-      border-left: 4px solid var(--light-gray);
-    }
-
-    .faq-item:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-hover);
-      border-left-color: var(--secondary);
-    }
-
-    .faq-item strong {
-      color: var(--primary);
-    }
-
-    /* Stats */
-    .stats {
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      gap: 30px;
-      margin: 60px 0;
-    }
-
-    .stat-item {
-      text-align: center;
-      flex: 1 1 160px;
-    }
-
     .stat-number {
       font-size: 3rem;
-      font-weight: 700;
-      color: var(--primary);
-      margin-bottom: 8px;
-      background: linear-gradient(to right, var(--primary), var(--secondary));
+      font-weight: 800;
+      margin-bottom: 10px;
+      background: var(--gradient-primary);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
@@ -446,143 +399,675 @@
       font-weight: 500;
     }
 
-    /* Footer */
-    footer {
-      background: linear-gradient(135deg, #0a1d60, var(--primary));
-      color: rgba(255, 255, 255, 0.8);
-      text-align: center;
-      padding: 60px 20px 30px;
-      font-size: 0.95em;
+    /* Services Section */
+    .services-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
+    }
+
+    .service-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
       position: relative;
     }
 
-    footer::before {
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .service-icon {
+      height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--gradient-primary);
+      color: var(--white);
+      font-size: 3rem;
+    }
+
+    .service-content {
+      padding: 30px;
+    }
+
+    .service-title {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      color: var(--primary);
+    }
+
+    .service-features {
+      list-style: none;
+      margin-top: 20px;
+    }
+
+    .service-features li {
+      margin-bottom: 12px;
+      padding-left: 28px;
+      position: relative;
+      color: var(--text-medium);
+    }
+
+    .service-features li::before {
+      content: '\f00c';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      position: absolute;
+      left: 0;
+      color: var(--secondary);
+    }
+
+    /* Why Choose Us Section */
+    .why-us-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .why-us-image {
+      position: relative;
+    }
+
+    .why-us-image img {
+      width: 100%;
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+    }
+
+    .why-us-points {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .point-card {
+      display: flex;
+      gap: 20px;
+      padding: 25px;
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    .point-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .point-icon {
+      width: 60px;
+      height: 60px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--gradient-secondary);
+      color: var(--white);
+      border-radius: var(--radius);
+      font-size: 1.5rem;
+    }
+
+    .point-content h4 {
+      margin-bottom: 10px;
+      color: var(--primary);
+    }
+
+    /* Process Section */
+    .process-container {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 60px;
+      position: relative;
+    }
+
+    .process-line {
+      position: absolute;
+      top: 40px;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--light-gray);
+      z-index: 0;
+    }
+
+    .process-line::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background: var(--gradient-secondary);
+      transition: width 2s ease;
+    }
+
+    .process-step {
+      width: 22%;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .step-number {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--white);
+      border: 3px solid var(--light-gray);
+      border-radius: 50%;
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--primary);
+      transition: var(--transition);
+    }
+
+    .process-step.active .step-number {
+      background: var(--gradient-primary);
+      color: var(--white);
+      border-color: var(--primary);
+    }
+
+    .step-title {
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: var(--primary);
+    }
+
+    .step-desc {
+      font-size: 0.95rem;
+      color: var(--text-medium);
+    }
+
+    /* Testimonials Section */
+    .testimonials-container {
+      margin-top: 60px;
+      position: relative;
+    }
+
+    .testimonial-slider {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      gap: 30px;
+      padding: 20px 0;
+    }
+
+    .testimonial-card {
+      min-width: 350px;
+      scroll-snap-align: start;
+      background: var(--white);
+      padding: 30px;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+
+    .testimonial-quote {
+      font-size: 1.1rem;
+      font-style: italic;
+      margin-bottom: 20px;
+      color: var(--text-dark);
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .author-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+
+    .author-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .author-info h5 {
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .author-info p {
+      font-size: 0.9rem;
+      color: var(--text-medium);
+    }
+
+    /* FAQ Section */
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+      margin-top: 50px;
+    }
+
+    .faq-item {
+      margin-bottom: 20px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    .faq-question {
+      padding: 20px 25px;
+      background: var(--white);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .faq-question i {
+      transition: transform 0.3s ease;
+    }
+
+    .faq-answer {
+      padding: 0 25px;
+      max-height: 0;
+      overflow: hidden;
+      background: var(--white);
+      transition: max-height 0.3s ease, padding 0.3s ease;
+    }
+
+    .faq-item.active .faq-question i {
+      transform: rotate(180deg);
+    }
+
+    .faq-item.active .faq-answer {
+      padding: 0 25px 20px;
+      max-height: 500px;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background: var(--gradient-primary);
+      color: var(--white);
+      text-align: center;
+      padding: 80px 20px;
+      border-radius: var(--radius-xl);
+      margin: 80px auto;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-section::before {
       content: '';
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
-      height: 2px;
-      background: linear-gradient(to right, transparent, var(--secondary), transparent);
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 20% 30%, rgba(0, 184, 217, 0.2) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(245, 158, 11, 0.2) 0%, transparent 40%);
+      z-index: 0;
     }
 
-    footer a {
+    .cta-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .cta-title {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      margin-bottom: 20px;
       color: var(--white);
-      text-decoration: none;
-      transition: var(--transition);
-      font-weight: 500;
     }
 
-    footer a:hover {
-      color: var(--secondary-light);
-      text-decoration: underline;
+    .cta-text {
+      font-size: 1.15rem;
+      margin-bottom: 30px;
+      opacity: 0.9;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: var(--white);
+      color: var(--primary);
+      padding: 16px 40px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      transition: var(--transition);
+    }
+
+    .cta-button:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Contact Form */
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+      background: var(--white);
+      padding: 40px;
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+    }
+
+    .form-group {
+      margin-bottom: 25px;
+    }
+
+    .form-label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: var(--primary);
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 14px 20px;
+      border: 1px solid var(--light-gray);
+      border-radius: var(--radius);
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: var(--secondary);
+      box-shadow: 0 0 0 3px rgba(0, 184, 217, 0.2);
+    }
+
+    .form-textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .submit-button {
+      background: var(--gradient-secondary);
+      color: var(--white);
+      border: none;
+      padding: 16px 40px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: var(--transition);
+      width: 100%;
+      box-shadow: 0 4px 15px rgba(0, 184, 217, 0.3);
+    }
+
+    .submit-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0, 184, 217, 0.4);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--gradient-primary);
+      color: rgba(255, 255, 255, 0.8);
+      padding: 80px 0 40px;
+      position: relative;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+    }
+
+    .footer-logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+
+    .footer-about {
+      margin-bottom: 20px;
+    }
+
+    .footer-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .footer-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background: var(--secondary-light);
     }
 
     .footer-links {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      margin-bottom: 30px;
-      flex-wrap: wrap;
+      list-style: none;
     }
 
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin: 30px 0;
+    .footer-links li {
+      margin-bottom: 12px;
     }
 
-    .social-links a {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .footer-links a {
+      color: rgba(255, 255, 255, 0.8);
       transition: var(--transition);
     }
 
-    .social-links a:hover {
-      background: var(--secondary);
+    .footer-links a:hover {
+      color: var(--secondary-light);
+      padding-left: 5px;
+    }
+
+    .footer-contact p {
+      margin-bottom: 15px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .footer-contact i {
+      margin-top: 3px;
+      color: var(--secondary-light);
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .social-icon {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      color: var(--white);
+      transition: var(--transition);
+    }
+
+    .social-icon:hover {
+      background: var(--secondary-light);
       transform: translateY(-3px);
     }
 
-    .copyright {
+    .footer-bottom {
+      text-align: center;
+      padding-top: 40px;
       margin-top: 40px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
       color: rgba(255, 255, 255, 0.6);
-      font-size: 0.9em;
+      font-size: 0.9rem;
     }
 
-    /* Responsive */
-    @media screen and (max-width: 1024px) {
-      h1 {
-        font-size: 2.8rem;
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
       }
-      
-      h2 {
-        font-size: 2.2rem;
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .animate {
+      opacity: 0;
+    }
+
+    .animate.fade-in {
+      animation: fadeIn 1s ease forwards;
+    }
+
+    .animate.fade-in-up {
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    .animate.delay-1 {
+      animation-delay: 0.2s;
+    }
+
+    .animate.delay-2 {
+      animation-delay: 0.4s;
+    }
+
+    .animate.delay-3 {
+      animation-delay: 0.6s;
+    }
+
+    .animate.delay-4 {
+      animation-delay: 0.8s;
+    }
+
+    /* Responsive Design */
+    @media screen and (max-width: 1024px) {
+      .about-container,
+      .why-us-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .about-image {
+        height: 400px;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
     }
 
     @media screen and (max-width: 768px) {
-      header {
-        padding: 100px 20px 80px;
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        background: var(--gradient-primary);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        transition: right 0.5s ease;
+        z-index: 1000;
       }
-      
-      nav {
-        gap: 12px;
-        font-size: 0.9em;
-        flex-wrap: wrap;
-        padding: 12px 0;
+
+      .nav-links.active {
+        right: 0;
       }
-      
-      nav a {
-        padding: 6px 12px;
+
+      .hamburger {
+        display: block;
       }
-      
-      h1 {
-        font-size: 2.4rem;
+
+      .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
       }
-      
-      h2 {
-        font-size: 2rem;
+
+      .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
       }
-      
-      section {
-        padding: 60px 20px;
+
+      .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
       }
-      
-      .box {
-        padding: 24px;
+
+      .process-container {
+        flex-direction: column;
+        gap: 40px;
       }
-      
-      .stats {
+
+      .process-step {
+        width: 100%;
+        display: flex;
+        text-align: left;
         gap: 20px;
       }
-      
-      .stat-number {
-        font-size: 2.5rem;
+
+      .step-number {
+        margin: 0;
+        flex-shrink: 0;
+      }
+
+      .process-line {
+        display: none;
       }
     }
 
     @media screen and (max-width: 480px) {
-      h1 {
-        font-size: 2rem;
+      .services-container {
+        grid-template-columns: 1fr;
       }
-      
-      h2 {
-        font-size: 1.8rem;
+
+      .stats-grid {
+        grid-template-columns: 1fr;
       }
-      
-      .contact-btn {
-        padding: 14px 32px;
+
+      .testimonial-card {
+        min-width: 280px;
       }
-      
-      .footer-links {
-        flex-direction: column;
-        gap: 12px;
+
+      .footer-container {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -590,159 +1075,521 @@
 
 <body>
 
+<!-- Header with Hero Section -->
 <header>
-  <div class="bg-circle circle-1"></div>
-  <div class="bg-circle circle-2"></div>
-  <div class="content">
-    <h1>Clearpath</h1>
-    <p>Your Partner for Zoho Ecosystem Solutions &amp; Workday Integrations</p>
-    <a href="#contact" class="contact-btn">Get Started</a>
+  <div class="hero-shape shape-1"></div>
+  <div class="hero-shape shape-2"></div>
+  <div class="hero-shape shape-3"></div>
+  
+  <div class="hero-content animate fade-in">
+    <h1>Transform Your Business with Seamless Integrations</h1>
+    <p class="hero-subtitle animate fade-in delay-1">Clearpath delivers expert Zoho ecosystem solutions and Workday integrations to streamline your operations and drive growth.</p>
+    <a href="#contact" class="cta-button animate fade-in delay-2">Get Started Today</a>
   </div>
 </header>
 
+<!-- Navigation -->
 <nav id="navbar">
-  <a href="#who">Who We Are</a>
-  <a href="#services">Services</a>
-  <a href="#why">Why Us</a>
-  <a href="#faq">FAQs</a>
-  <a href="#contact">Contact</a>
+  <div class="nav-container">
+    <a href="#" class="nav-logo">
+      <i class="fas fa-route"></i> Clearpath
+    </a>
+    
+    <div class="hamburger">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+    
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#testimonials">Clients</a>
+      <a href="#contact">Contact</a>
+      <a href="#contact" class="nav-cta">Free Consultation</a>
+    </div>
+  </div>
 </nav>
 
-<section id="who" class="fade-in">
-  <h2>Who We Are</h2>
-  <p>At <strong>Clearpath</strong>, we empower organizations to drive digital growth with our expert Zoho ecosystem solutions and seamless Workday integrations. We're trusted by enterprises to deliver smart, future-ready systems that run smoothly and scale confidently.</p>
-  
-  <div class="stats scale-in">
-    <div class="stat-item">
-      <div class="stat-number" data-count="50">0</div>
-      <div class="stat-label">Successful Projects</div>
+<!-- About Section -->
+<section id="about" class="animate fade-in-up">
+  <div class="about-container">
+    <div class="about-image animate fade-in delay-1">
+      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Business team discussing digital transformation">
     </div>
-    <div class="stat-item">
-      <div class="stat-number" data-count="100">0</div>
-      <div class="stat-label">Happy Clients</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-number" data-count="15">0</div>
-      <div class="stat-label">Certified Experts</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-number" data-count="24">0</div>
-      <div class="stat-label">Support Hours</div>
+    
+    <div class="about-content animate fade-in delay-2">
+      <h2 class="section-title">Who We Are</h2>
+      <p class="section-subtitle">At Clearpath, we're more than just consultants - we're your strategic partners in digital transformation.</p>
+      
+      <p>Founded by industry veterans with decades of combined experience, we specialize in implementing and optimizing Zoho ecosystem solutions and Workday integrations that drive real business results.</p>
+      
+      <p>Our approach combines technical expertise with deep business acumen to deliver solutions that are not just functional, but transformative.</p>
+      
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number" data-count="50">0</div>
+          <div class="stat-label">Successful Projects</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" data-count="100">0</div>
+          <div class="stat-label">Happy Clients</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" data-count="15">0</div>
+          <div class="stat-label">Certified Experts</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" data-count="24">0</div>
+          <div class="stat-label">Support Hours</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="services" class="fade-in">
-  <h2>Our Services</h2>
-  <p>We offer comprehensive solutions tailored to your business needs, ensuring seamless integration and maximum efficiency.</p>
+<!-- Services Section -->
+<section id="services" class="animate fade-in-up">
+  <h2 class="section-title">Our Services</h2>
+  <p class="section-subtitle">Comprehensive solutions tailored to your unique business needs</p>
   
-  <div class="services">
-    <div class="box scale-in">
-      <h3><i class="fas fa-cloud"></i> Zoho Ecosystem Solutions</h3>
-      <ul>
-        <li><img src="crm.svg" alt="Description of image" style="max-width:20%; height:auto;"></li>
-        <li><img src="creator.svg" alt="Description of image" style="max-width:20%; height:auto;"></li>
-        <li><img src="books.svg" alt="Description of image" style="max-width:20%; height:auto;"></li>
-        <li><img src="projects (1).svg" alt="Description of image" style="max-width:20%; height:auto;"></li>
-        <li><img src="desk.svg" alt="Description of image" style="max-width:20%; height:auto;"></li>
-        <li><img src="people.svg" alt="Description of image" style="max-width:20%; height:auto;"></li>
-        <li>Integrations, Training & Long-term Support</li>
+  <div class="services-container">
+    <div class="service-card animate fade-in delay-1">
+      <div class="service-icon">
+        <i class="fas fa-cloud"></i>
+      </div>
+      <div class="service-content">
+        <h3 class="service-title">Zoho Ecosystem Solutions</h3>
+        <p>End-to-end implementation and optimization of the complete Zoho suite.</p>
+        
+        <ul class="service-features">
+          <li>CRM Implementation & Customization</li>
+          <li>Zoho Creator Custom App Development</li>
+          <li>Zoho Books Automation</li>
+          <li>Zoho Projects Setup</li>
+          <li>Zoho Desk (Customer Support)</li>
+          <li>Zoho People (HR)</li>
+          <li>Integrations, Training & Support</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="service-card animate fade-in delay-2">
+      <div class="service-icon">
+        <i class="fas fa-network-wired"></i>
+      </div>
+      <div class="service-content">
+        <h3 class="service-title">Workday Integrations</h3>
+        <p>Seamless connections between Workday and your business systems.</p>
+        
+        <ul class="service-features">
+          <li>HRIS Implementations</li>
+          <li>Custom API & Data Sync</li>
+          <li>Payroll/Finance Integrations</li>
+          <li>3rd-party System Connections</li>
+          <li>Lifecycle Support & Optimization</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="service-card animate fade-in delay-3">
+      <div class="service-icon">
+        <i class="fas fa-cogs"></i>
+      </div>
+      <div class="service-content">
+        <h3 class="service-title">Custom Solutions</h3>
+        <p>Tailored applications to solve your unique business challenges.</p>
+        
+        <ul class="service-features">
+          <li>Custom Workflow Automation</li>
+          <li>Data Migration Services</li>
+          <li>Business Process Optimization</li>
+          <li>Analytics & Reporting</li>
+          <li>Mobile Application Development</li>
+          <li>Ongoing Maintenance & Support</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Us Section -->
+<section id="why" class="animate fade-in-up">
+  <h2 class="section-title">Why Choose Clearpath?</h2>
+  <p class="section-subtitle">We deliver more than just technology - we deliver transformation</p>
+  
+  <div class="why-us-container">
+    <div class="why-us-points">
+      <div class="point-card animate fade-in delay-1">
+        <div class="point-icon">
+          <i class="fas fa-award"></i>
+        </div>
+        <div class="point-content">
+          <h4>Certified Experts</h4>
+          <p>Our team holds top certifications in both Zoho and Workday platforms, ensuring you get the highest quality implementation.</p>
+        </div>
+      </div>
+      
+      <div class="point-card animate fade-in delay-2">
+        <div class="point-icon">
+          <i class="fas fa-chess"></i>
+        </div>
+        <div class="point-content">
+          <h4>Strategic Approach</h4>
+          <p>We align technology with business objectives, creating solutions that drive measurable results.</p>
+        </div>
+      </div>
+      
+      <div class="point-card animate fade-in delay-3">
+        <div class="point-icon">
+          <i class="fas fa-headset"></i>
+        </div>
+        <div class="point-content">
+          <h4>Dedicated Support</h4>
+          <p>Our clients enjoy priority support with rapid response times and personalized service.</p>
+        </div>
+      </div>
+      
+      <div class="point-card animate fade-in delay-4">
+        <div class="point-icon">
+          <i class="fas fa-chart-line"></i>
+        </div>
+        <div class="point-content">
+          <h4>Proven Results</h4>
+          <p>50+ successful implementations with documented ROI and client success stories.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="why-us-image animate fade-in delay-2">
+      <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Team discussing digital strategy">
+    </div>
+  </div>
+</section>
+
+<!-- Process Section -->
+<section id="process" class="animate fade-in-up">
+  <h2 class="section-title">Our Process</h2>
+  <p class="section-subtitle">A structured approach to ensure your success</p>
+  
+  <div class="process-container">
+    <div class="process-line"></div>
+    
+    <div class="process-step active animate fade-in delay-1">
+      <div class="step-number">1</div>
+      <div class="step-content">
+        <h4 class="step-title">Discovery</h4>
+        <p class="step-desc">We learn about your business, challenges, and goals to craft the perfect solution.</p>
+      </div>
+    </div>
+    
+    <div class="process-step animate fade-in delay-2">
+      <div class="step-number">2</div>
+      <div class="step-content">
+        <h4 class="step-title">Planning</h4>
+        <p class="step-desc">Detailed roadmap with milestones, deliverables, and success metrics.</p>
+      </div>
+    </div>
+    
+    <div class="process-step animate fade-in delay-3">
+      <div class="step-number">3</div>
+      <div class="step-content">
+        <h4 class="step-title">Implementation</h4>
+        <p class="step-desc">Expert configuration, customization, and integration of your systems.</p>
+      </div>
+    </div>
+    
+    <div class="process-step animate fade-in delay-4">
+      <div class="step-number">4</div>
+      <div class="step-content">
+        <h4 class="step-title">Support</h4>
+        <p class="step-desc">Ongoing optimization, training, and support to ensure long-term success.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section id="testimonials" class="animate fade-in-up">
+  <h2 class="section-title">Client Success Stories</h2>
+  <p class="section-subtitle">Don't just take our word for it</p>
+  
+  <div class="testimonials-container">
+    <div class="testimonial-slider">
+      <div class="testimonial-card animate fade-in delay-1">
+        <p class="testimonial-quote">"Clearpath transformed our Zoho implementation from a basic setup to a powerful business tool. Their expertise saved us countless hours and significantly improved our operations."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">
+            <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah Johnson">
+          </div>
+          <div class="author-info">
+            <h5>Sarah Johnson</h5>
+            <p>COO, TechForward Inc.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="testimonial-card animate fade-in delay-2">
+        <p class="testimonial-quote">"The Workday integration Clearpath built for us eliminated manual processes and reduced errors by 90%. Their team was professional, knowledgeable, and a pleasure to work with."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen">
+          </div>
+          <div class="author-info">
+            <h5>Michael Chen</h5>
+            <p>HR Director, Global Solutions</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="testimonial-card animate fade-in delay-3">
+        <p class="testimonial-quote">"We've worked with several consultants before finding Clearpath. Their depth of knowledge in the Zoho ecosystem is unmatched. They've become an extension of our team."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">
+            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Lisa Rodriguez">
+          </div>
+          <div class="author-info">
+            <h5>Lisa Rodriguez</h5>
+            <p>CEO, BrightMind Marketing</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section id="faq" class="animate fade-in-up">
+  <h2 class="section-title">Frequently Asked Questions</h2>
+  <p class="section-subtitle">Answers to common questions about our services</p>
+  
+  <div class="faq-container">
+    <div class="faq-item animate fade-in delay-1">
+      <div class="faq-question">
+        <span>Do you support both new implementations and existing setups?</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="faq-answer">
+        <p>Absolutely! We specialize in both greenfield deployments and optimization of ongoing platforms. Whether you're starting fresh or looking to enhance your current system, we can help. Our team conducts thorough assessments of existing implementations to identify improvement opportunities.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item animate fade-in delay-2">
+      <div class="faq-question">
+        <span>Can you integrate Workday with legacy or industry-specific apps?</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="faq-answer">
+        <p>Definitely. Our experts have extensive experience integrating Workday with payroll systems, financial software, ITSM platforms, and various third-party applications across multiple industries. We've successfully connected Workday with specialized systems in healthcare, finance, manufacturing, and more.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item animate fade-in delay-3">
+      <div class="faq-question">
+        <span>What's your typical project timeline?</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="faq-answer">
+        <p>Project timelines vary based on complexity, but most Zoho implementations take 4-8 weeks, while Workday integrations typically range from 6-12 weeks. We provide detailed timelines during our discovery phase after understanding your specific requirements and business processes.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item animate fade-in delay-4">
+      <div class="faq-question">
+        <span>How do you handle data security and compliance?</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="faq-answer">
+        <p>Security is our top priority. We follow industry best practices and comply with all relevant regulations (GDPR, HIPAA, etc.). All our team members undergo security training, and we implement robust encryption, access controls, and audit trails in every solution we deliver.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section animate fade-in">
+  <div class="cta-content">
+    <h2 class="cta-title">Ready to Transform Your Business?</h2>
+    <p class="cta-text">Schedule a free consultation with our experts to discuss how we can help streamline your operations and drive growth.</p>
+    <a href="#contact" class="cta-button">Get Started Today</a>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="animate fade-in-up">
+  <h2 class="section-title">Get In Touch</h2>
+  <p class="section-subtitle">Let's discuss how we can help your business</p>
+  
+  <div class="contact-form animate fade-in delay-1">
+    <form id="contactForm">
+      <div class="form-group">
+        <label for="name" class="form-label">Your Name</label>
+        <input type="text" id="name" class="form-input" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="email" class="form-label">Email Address</label>
+        <input type="email" id="email" class="form-input" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="company" class="form-label">Company Name</label>
+        <input type="text" id="company" class="form-input">
+      </div>
+      
+      <div class="form-group">
+        <label for="service" class="form-label">Service Interested In</label>
+        <select id="service" class="form-input">
+          <option value="">Select a service</option>
+          <option value="zoho">Zoho Solutions</option>
+          <option value="workday">Workday Integrations</option>
+          <option value="both">Both</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="message" class="form-label">Your Message</label>
+        <textarea id="message" class="form-input form-textarea" required></textarea>
+      </div>
+      
+      <button type="submit" class="submit-button">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="animate fade-in">
+  <div class="footer-container">
+    <div class="footer-about">
+      <a href="#" class="footer-logo">
+        <i class="fas fa-route"></i> Clearpath
+      </a>
+      <p class="footer-about">Transforming businesses through expert Zoho and Workday solutions since 2015.</p>
+      <div class="footer-social">
+        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    
+    <div class="footer-services">
+      <h4 class="footer-title">Services</h4>
+      <ul class="footer-links">
+        <li><a href="#">Zoho CRM Implementation</a></li>
+        <li><a href="#">Zoho Creator Development</a></li>
+        <li><a href="#">Workday HRIS Integration</a></li>
+        <li><a href="#">Workday Payroll Solutions</a></li>
+        <li><a href="#">Custom App Development</a></li>
       </ul>
     </div>
-    <div class="box scale-in">
-      <h3><i class="fas fa-network-wired"></i> Workday Integrations</h3>
-      <ul>
-        <li>HRIS Implementations</li>
-        <li>Custom API & Data Sync</li>
-        <li>Payroll/Finance Integrations</li>
-        <li>3rd-party System Connections</li>
-        <li>Lifecycle Support & Optimization</li>
+    
+    <div class="footer-company">
+      <h4 class="footer-title">Company</h4>
+      <ul class="footer-links">
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#process">Our Process</a></li>
+        <li><a href="#testimonials">Case Studies</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Blog</a></li>
       </ul>
     </div>
-  </div>
-</section>
-
-<section id="why" class="fade-in">
-  <h2>Why Choose Clearpath?</h2>
-  <p>We stand out from the competition with our unique approach and commitment to excellence.</p>
-  
-  <div class="box" style="max-width: 100%; margin-top: 30px;">
-    <ul style="list-style-type: none; padding-left: 0;">
-      <li style="padding-left: 0; margin-bottom: 20px;"><i class="fas fa-check-circle" style="color: var(--secondary); margin-right: 10px;"></i> <strong>Certified Zoho & Workday Professionals</strong> – Up-to-date implementation experts with deep platform knowledge.</li>
-      <li style="padding-left: 0; margin-bottom: 20px;"><i class="fas fa-check-circle" style="color: var(--secondary); margin-right: 10px;"></i> <strong>End-to-End Project Ownership</strong> – From strategy to support, we cover every step of your digital transformation.</li>
-      <li style="padding-left: 0; margin-bottom: 20px;"><i class="fas fa-check-circle" style="color: var(--secondary); margin-right: 10px;"></i> <strong>Tailored Digital Solutions</strong> – Custom-built around your unique workflows and success metrics.</li>
-      <li style="padding-left: 0; margin-bottom: 20px;"><i class="fas fa-check-circle" style="color: var(--secondary); margin-right: 10px;"></i> <strong>On-demand Support</strong> – Personalized client-first approach with rapid response times.</li>
-      <li style="padding-left: 0;"><i class="fas fa-check-circle" style="color: var(--secondary); margin-right: 10px;"></i> <strong>Proven Success</strong> – 50+ successful onboarding and transformation stories with measurable results.</li>
-    </ul>
-  </div>
-</section>
-
-<section class="cta fade-in" id="contact">
-  <div class="content">
-    <h2>Let's Build Your Future Together</h2>
-    <p>Get in touch to explore how Clearpath can accelerate your business process transformation through seamless integrations and cloud services.</p>
-    <a href="mailto:info@clearpathconsulting.com" class="contact-btn">
-      <i class="fas fa-envelope" style="margin-right: 8px;"></i> Contact Us
-    </a>
-  </div>
-</section>
-
-<section id="faq" class="fade-in">
-  <h2>Frequently Asked Questions</h2>
-  <p>Find answers to common questions about our services and approach.</p>
-  
-  <div class="faq-item scale-in">
-    <strong>Q:</strong> Do you support both new implementations and existing setups?<br /><br />
-    <strong>A:</strong> Yes! We specialize in both greenfield deployments and optimization of ongoing platforms. Whether you're starting fresh or looking to enhance your current system, we can help.
-  </div>
-  <div class="faq-item scale-in">
-    <strong>Q:</strong> Can you integrate Workday with legacy or industry-specific apps?<br /><br />
-    <strong>A:</strong> Definitely. Our experts have extensive experience integrating Workday with payroll systems, financial software, ITSM platforms, and various third-party applications across multiple industries.
-  </div>
-  <div class="faq-item scale-in">
-    <strong>Q:</strong> What's your typical project timeline?<br /><br />
-    <strong>A:</strong> Project timelines vary based on complexity, but most Zoho implementations take 4-8 weeks, while Workday integrations typically range from 6-12 weeks. We provide detailed timelines during our discovery phase.
-  </div>
-</section>
-
-<footer>
-  <div class="footer-links">
-    <a href="#who">About Us</a>
-    <a href="#services">Services</a>
-    <a href="#why">Our Approach</a>
-    <a href="#faq">FAQs</a>
-    <a href="#contact">Contact</a>
-    <a href="#">Privacy Policy</a>
+    
+    <div class="footer-contact">
+      <h4 class="footer-title">Contact</h4>
+      <p><i class="fas fa-map-marker-alt"></i> 123 Business Ave, Suite 500<br>San Francisco, CA 94107</p>
+      <p><i class="fas fa-phone-alt"></i> +1 (800) 555-1234</p>
+      <p><i class="fas fa-envelope"></i> info@clearpathconsulting.com</p>
+    </div>
   </div>
   
-  <div class="social-links">
-    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-    <a href="#"><i class="fab fa-twitter"></i></a>
-    <a href="#"><i class="fab fa-facebook-f"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
-  </div>
-  
-  <div>
-    Email: <a href="mailto:info@clearpathconsulting.com">info@clearpathconsulting.com</a> |
-    Phone: <a href="tel:+18005551234">+1 (800) 555-1234</a>
-  </div>
-  
-  <div class="copyright">
-    &copy; 2025 Clearpath Consulting. All rights reserved.
+  <div class="footer-bottom">
+    <p>&copy; 2025 Clearpath Consulting. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
   </div>
 </footer>
 
 <script>
-  // Animation Activation
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show");
-        observer.unobserve(entry.target);
-        
-        // Animate stats counting
-        if (entry.target.querySelector('.stat-number')) {
-          const statNumbers = entry.target.querySelectorAll('.stat-number');
+  // Mobile Navigation Toggle
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks = document.querySelector('.nav-links');
+  
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navLinks.classList.toggle('active');
+  });
+  
+  // Close mobile menu when clicking a link
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      navLinks.classList.remove('active');
+    });
+  });
+  
+  // Navbar scroll effect
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+  
+  // Smooth scrolling for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      const targetId = this.getAttribute('href');
+      if (targetId === '#') return;
+      
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        window.scrollTo({
+          top: targetElement.offsetTop - 100,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+  
+  // FAQ Accordion
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    question.addEventListener('click', () => {
+      item.classList.toggle('active');
+    });
+  });
+  
+  // Animate process line on scroll
+  const processLine = document.querySelector('.process-line');
+  const processSection = document.getElementById('process');
+  
+  const animateProcessLine = () => {
+    const sectionTop = processSection.getBoundingClientRect().top;
+    const sectionHeight = processSection.offsetHeight;
+    const windowHeight = window.innerHeight;
+    
+    if (sectionTop < windowHeight * 0.75 && sectionTop > -sectionHeight * 0.25) {
+      const scrollPercent = 1 - (sectionTop / (windowHeight * 0.75));
+      processLine.style.width = `${scrollPercent * 100}%`;
+    }
+  };
+  
+  window.addEventListener('scroll', animateProcessLine);
+  
+  // Animate stats counting
+  const animateStats = () => {
+    const statNumbers = document.querySelectorAll('.stat-number');
+    const statsSection = document.getElementById('about');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
           statNumbers.forEach(stat => {
             const target = parseInt(stat.getAttribute('data-count'));
             const duration = 2000;
@@ -759,39 +1606,52 @@
               stat.textContent = Math.floor(current);
             }, 16);
           });
+          observer.unobserve(entry.target);
         }
+      });
+    }, { threshold: 0.5 });
+    
+    observer.observe(statsSection);
+  };
+  
+  // Initialize animations when page loads
+  document.addEventListener('DOMContentLoaded', () => {
+    // Add animation classes to elements
+    const animateElements = document.querySelectorAll('.animate');
+    animateElements.forEach(el => {
+      if (el.classList.contains('fade-in') {
+        el.style.opacity = '0';
+      } else if (el.classList.contains('fade-in-up')) {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(40px)';
       }
     });
-  }, { threshold: 0.1 });
-
-  document.querySelectorAll(".fade-in, .scale-in").forEach(el => observer.observe(el));
-
-  // Navbar scroll effect
-  const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
+    
+    // Intersection Observer for scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    animateElements.forEach(el => observer.observe(el));
+    
+    // Initialize stats animation
+    animateStats();
+    
+    // Form submission
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('Thank you for your message! We will get back to you soon.');
+        contactForm.reset();
+      });
     }
-  });
-
-  // Smooth scrolling for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      
-      const targetId = this.getAttribute('href');
-      if (targetId === '#') return;
-      
-      const targetElement = document.querySelector(targetId);
-      if (targetElement) {
-        window.scrollTo({
-          top: targetElement.offsetTop - 80,
-          behavior: 'smooth'
-        });
-      }
-    });
   });
 </script>
 
